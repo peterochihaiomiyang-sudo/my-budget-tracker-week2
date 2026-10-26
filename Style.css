@@ -1,180 +1,194 @@
 
-/* General page styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 24px;
     background-color: #eaf2f8;
+    color: #334155;
     line-height: 1.6;
 }
 
-/* Header */
-#page-header {
-    background-color: #ffffff;
-    padding: 25px;
-    margin-bottom: 20px;
-    text-align: center;
-    border-radius: 8px;
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #1e40af;
 }
 
-#page-header img {
-    display: block;
-    margin: 0 auto 10px;
+body > h1 {
+    max-width: 740px;
+    margin: 0 auto 24px;
+    padding: 24px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #dbeafe;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
 }
 
 h1 {
     color: #2563eb;
-}
-
-p {
-    color: #333333;
+    font-size: 2rem;
 }
 
 h2 {
-    color: #1e40af;
-}
-
-/* Add Expense section */
-.expense-section {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-/* Form labels */
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Form fields */
-input,
-select {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #9ca3af;
-    border-radius: 5px;
-}
-
-/* Advanced selector 1: focus pseudo-class */
-input:focus,
-select:focus {
-    outline: 2px solid #2563eb;
-    border-color: #2563eb;
-}
-
-/* Advanced selector 2: negation pseudo-class */
-input:not([type="submit"]) {
-    background-color: #ffffff;
-}
-
-/* Add Expense button */
-button {
-    background-color: #2563eb;
-    color: #ffffff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #1e40af;
-}
-
-/* Expenses table section */
-#expenses-list {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    overflow-x: auto;
-}
-
-#expenses-list h2 {
-    color: #333333;
+    font-size: 1.35rem;
     margin-top: 0;
 }
 
-/* Advanced selector 3: descendant selector */
-.expenses-section td {
-    color: #333333;
+.add-expense-section,
+.expenses-section {
+    max-width: 740px;
+    margin: 24px auto;
+    padding: 26px;
+    background-color: white;
+    border: 1px solid #dbeafe;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(30, 64, 175, 0.08);
 }
 
-/* Table styling */
+.add-expense-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: 500;
+    color: #1e3a8a;
+}
+
+input:not([type="submit"]),
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font: inherit;
+    color: #334155;
+    background-color: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+button,
+input[type="submit"] {
+    padding: 12px 18px;
+    font: inherit;
+    font-weight: 700;
+    color: white;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-expense-section form button,
+.add-expense-section form input[type="submit"] {
+    width: 100%;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #1e40af;
+}
+
 table {
     width: 100%;
+    margin-top: 18px;
     border-collapse: collapse;
-    margin-top: 15px;
+    border: 1px solid #dbeafe;
 }
 
 th,
 td {
-    border: 1px solid #cbd5e1;
-    padding: 12px;
+    padding: 13px 12px;
     text-align: left;
+    border: 1px solid #dbeafe;
 }
 
-/* Colored table header */
 thead {
-    background-color: #2563eb;
-    color: #ffffff;
+    color: white;
+    background-color: #1e40af;
 }
 
 th {
-    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
-/* Advanced selector 4: alternating table rows */
 tbody tr:nth-child(even) {
     background-color: #eaf2f8;
 }
 
-/* Table row hover effect */
+tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
 tbody tr:hover {
     background-color: #dbeafe;
 }
 
-/* Help section */
-.help-section,
-.video-section {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+details {
+    max-width: 740px;
+    margin: 24px auto;
+    padding: 18px;
+    background-color: white;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
 }
 
 summary {
-    cursor: pointer;
-    font-weight: bold;
     color: #1e40af;
-    padding: 10px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
-/* Video */
 iframe {
+    display: block;
+    width: 100%;
     max-width: 100%;
-    border: none;
+    margin: 18px auto;
+    border: 1px solid #cbd5e1;
     border-radius: 8px;
 }
 
-/* Small screen support */
+body > h2 {
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     body {
-        padding: 10px;
+        padding: 12px;
+    }
+
+    body > h1 {
+        padding: 18px;
+        font-size: 1.6rem;
+    }
+
+    .add-expense-section,
+    .expenses-section {
+        padding: 16px;
+        margin: 16px auto;
+    }
+
+    table {
+        font-size: 0.9rem;
     }
 
     th,
     td {
-        padding: 8px;
+        padding: 9px 7px;
     }
 }
