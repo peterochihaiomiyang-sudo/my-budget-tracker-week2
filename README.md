@@ -1,31 +1,35 @@
-
-# My Budget Tracker
+# SpendWise Dashboard Shell
 
 ## About the Project
-My Budget Tracker is a simple website that helps users record and view their expenses. This project improves the website's visual design using CSS.
+SpendWise is a responsive dashboard for viewing sample budget and expense information. This Week 4 project focuses on layout and visual design using CSS Grid and Flexbox. It uses sample data and does not yet save or calculate expenses.
 
 ## Project Files
-- **index.html:** Contains the page content, expense form, expense table, and budgeting tips.
-- **style.css:** Controls the colors, fonts, spacing, borders, buttons, form, and table design.
-- **README.md:** Describes the project and its features.
+- `index.html`: Contains the sidebar, header, summary cards, six expense categories, recent transactions, and footer.
+- `style.css`: Defines colors, layouts, responsive styling, hover effects, keyboard-focus effects, and a dark theme.
+- `README.md`: Describes the project and its features.
 
-## Design Features
-- Blue, white, and light blue color scheme.
-- Poppins font for headings and Roboto font for body text using Google Fonts.
-- White sections with rounded corners and shadows.
-- Blue buttons and table headings.
-- Alternating colors in table rows.
-- Clear spacing around the form and table.
-- Layout adjustments for smaller screens.
+## Features
+- Sidebar navigation and dashboard header
+- Monthly budget, spending, and remaining balance summaries
+- Six expense categories: Food, Transport, Rent, Entertainment, Savings, and Utilities
+- Recent transaction list
+- CSS Grid for the main layout and category cards
+- Flexbox for navigation, header, and card contents
+- Responsive single-column layout on screens narrower than 768px
+- Hover and keyboard-focus effects
+- Dark theme based on system color preference
+- No absolute positioning used for the page layout
 
-## Technologies Used
-- HTML
-- CSS
-- Google Fonts
+## Technologies
+- HTML5
+- CSS3
+- CSS Grid
+- Flexbox
+- CSS custom properties
 
-## How to View the Project
-Open `index.html` in a web browser, or visit the live website:
+## How to View
+Open `index.html` in a browser or visit the live website:
+
 https://peterochihaiomiyang-sudo.github.io/my-budget-tracker-week2/
 
-## Future Improvement
-JavaScript can be added later to make the Add Expense button save new expenses.
+**Note:** All financial figures are sample data for learning purposes.
