@@ -1,117 +1,86 @@
-# SpendWise – Budget Tracker
 
-## About the Project
+# SpendWise – Interactive Personal Budget Tracker
 
-SpendWise is a responsive budget dashboard designed to help users understand their monthly budget, expenses, and remaining balance.
+## Project Overview
 
-This project builds on the HTML and CSS dashboard by introducing JavaScript fundamentals, including variables, data types, user input, calculations, and reusable functions.
+SpendWise is a personal budget tracker built with HTML, CSS, and JavaScript. It helps users view their monthly budget, track expenses, see spending by category, and monitor their remaining balance.
 
-All financial figures are sample data for learning purposes.
-
-## Project Files
-
-- `index.html` – Provides the structure of the SpendWise dashboard.
-- `style.css` – Styles the dashboard and makes it responsive.
-- `script.js` – Collects budget information, performs calculations, and displays results in the browser console.
-- `README.md` – Documents the project and explains how it works.
+This project was improved to make the dashboard interactive. Users can add expenses through a form and see the dashboard update immediately.
 
 ## Features
 
-- Displays a budget dashboard with expense categories and recent transactions.
-- Collects monthly budget and total expenses using JavaScript input prompts.
-- Validates user input to ensure the values are valid numbers.
-- Calculates the remaining balance.
-- Calculates the percentage of the budget spent.
-- Displays clearly labelled results in the browser console.
-- Includes reusable functions for budget calculations.
-- Provides a responsive interface using CSS Grid and Flexbox.
+- Displays the monthly budget, total expenses, and remaining balance.
+- Shows expense totals for different categories.
+- Displays a list of expense transactions.
+- Allows users to add new expenses using a form.
+- Updates totals, categories, and transactions automatically.
+- Displays feedback when the budget is nearly used or exceeded.
+- Validates expense information before adding it.
 
 ## JavaScript Concepts Implemented
 
-### 1. Variables and Data Types
+### 1. Variables and Data
 
-The application uses variables to store budgeting information:
+Variables store the monthly budget and connect the JavaScript code to elements on the webpage.
 
-- `monthlyBudget` stores the monthly budget.
-- `totalExpenses` stores total expenses.
-- `remainingBalance` stores the amount remaining after expenses.
-- `spendingPercentage` stores the calculated percentage spent.
+### 2. Arrays
 
-The code uses `let` for values that can change and `const` for values that do not need reassignment.
+An array stores multiple expense records. Each record contains an expense name, category, and amount. New expenses are added to the array when the user submits the form.
 
-### 2. User Input
+### 3. Loops
 
-The `prompt()` function collects the monthly budget and total expenses from the user.
+`for...of` loops process expense records to calculate total spending, display transactions, and calculate category totals. A `for...in` loop displays the category summaries.
 
-The `Number()` function converts the entered values into numbers. The program checks the input and rejects invalid budget values and negative expenses.
+### 4. Conditionals
 
-### 3. Budget Calculations
+`if`, `else if`, and `else` statements validate user input and display budget feedback. The dashboard warns users when they exceed their budget or use at least 80% of it.
 
-The remaining balance is calculated by subtracting total expenses from the monthly budget:
+### 5. Functions
 
-`Remaining Balance = Monthly Budget - Total Expenses`
+Reusable functions format currency, calculate totals and balances, display transactions, update category summaries, and refresh the dashboard.
 
-The percentage spent is calculated using:
+### 6. DOM Manipulation
 
-`Percentage Spent = (Total Expenses / Monthly Budget) × 100`
+JavaScript uses DOM methods such as `getElementById()`, `createElement()`, and `textContent` to update the webpage without requiring a manual refresh.
 
-For example, with a monthly budget of KSh 50,000 and expenses of KSh 18,450, the remaining balance is KSh 31,550 and the percentage spent is 36.9%.
+### 7. Event Listeners
 
-### 4. Reusable Functions
+A `submit` event listener handles the expense form. It prevents the default page reload, validates the information, adds the expense to the array, and refreshes the dashboard.
 
-The application uses functions to organize its logic:
+## Challenges and Solutions
 
-- `calculateBalance()` calculates the remaining balance.
-- `calculateSpendingPercentage()` calculates the percentage spent.
-- `collectBudgetInput()` collects and validates user input.
-- `displayBudgetResults()` calculates and displays the budget report.
-
-Functions make the code easier to read, maintain, test, and reuse.
-
-### 5. Console Output
-
-The application uses `console.log()` to display a clearly labelled budget report in the browser developer console.
+- **Keeping totals accurate:** Calculations are performed from the expense array so the displayed total and balance stay consistent.
+- **Updating several sections:** A dashboard update function refreshes the summary cards, category totals, transaction table, and budget message.
+- **Validating user input:** The form checks that the expense name and category are provided and that the amount is a valid positive number.
+- **Providing budget feedback:** Conditional statements display different messages depending on the remaining balance and percentage spent.
 
 ## Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript
-- CSS Grid and Flexbox
-- Git and GitHub
-- GitHub Pages
 
-## How to Run the Project
+## Project Files
 
-1. Open the live website: https://peterochihaiomiyang-sudo.github.io/my-budget-tracker-week2/
-2. Enter your monthly budget when prompted.
-3. Enter your total expenses when prompted.
-4. Open the browser developer tools using F12.
-5. Select the Console tab to view the budget report.
+- `index.html` – Dashboard structure and expense form.
+- `style.css` – Dashboard styling and layout.
+- `script.js` – Expense data, calculations, validation, and interactive updates.
+- `README.md` – Project documentation.
 
 ## Testing
 
-Test the application using a monthly budget of `50000` and total expenses of `18450`.
+The application was tested by adding a new expense through the form. Adding a KSh 500 lunch expense increased total spending from KSh 18,450 to KSh 18,950, reduced the remaining balance from KSh 31,550 to KSh 31,050, and increased the Food category total from KSh 6,500 to KSh 7,000.
 
-Expected results:
-
-- Monthly Budget: KSh 50,000
-- Total Expenses: KSh 18,450
-- Remaining Balance: KSh 31,550
-- Percentage Spent: 36.9%
-
-Also test invalid inputs, blank inputs, and cancelled prompts.
+The new expense also appeared in the transaction table.
 
 ## Live Website
 
 https://peterochihaiomiyang-sudo.github.io/my-budget-tracker-week2/
 
-## Repository
+## GitHub Repository
 
 https://github.com/peterochihaiomiyang-sudo/my-budget-tracker-week2
 
 ## Author
 
 Peter Ochihai Omiyang
-
-PLP Software Engineering Training – JavaScript Foundation Assignment
