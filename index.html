@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpendWise Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="dashboard">
@@ -14,6 +15,7 @@
                 <span class="brand-icon">S</span>
                 <span>SpendWise</span>
             </div>
+
             <p class="nav-heading">MENU</p>
             <nav class="navigation" aria-label="Main navigation">
                 <a class="nav-link active" href="#overview">▦ <span>Overview</span></a>
@@ -22,6 +24,7 @@
                 <a class="nav-link" href="#savings">◇ <span>Savings</span></a>
                 <a class="nav-link" href="#reports">▥ <span>Reports</span></a>
             </nav>
+
             <div class="sidebar-footer">
                 <div class="profile-avatar">P</div>
                 <div class="profile-info">
@@ -35,7 +38,7 @@
             <header class="topbar">
                 <div>
                     <h1>Dashboard Overview</h1>
-                    <p>Welcome back! Here's your financial summary.</p>
+                    <p>Welcome back! Manage your budget and expenses.</p>
                 </div>
                 <div class="date-label">October 2026</div>
             </header>
@@ -43,24 +46,24 @@
             <section class="summary-cards" aria-label="Budget summary">
                 <article class="summary-card">
                     <p>Monthly Budget</p>
-                    <h2>KSh 50,000</h2>
+                    <h2 id="monthly-budget">KSh 50,000</h2>
                     <span>Your planned budget</span>
                 </article>
                 <article class="summary-card">
                     <p>Total Spent</p>
-                    <h2>KSh 18,450</h2>
+                    <h2 id="total-spent">KSh 18,450</h2>
                     <span>Expenses so far</span>
                 </article>
                 <article class="summary-card">
                     <p>Remaining Balance</p>
-                    <h2>KSh 31,550</h2>
+                    <h2 id="remaining-balance">KSh 31,550</h2>
                     <span>Budget left to spend</span>
                 </article>
             </section>
 
             <section class="categories-section" id="expenses">
                 <h2>Spending by Category</h2>
-                <div class="category-grid">
+                <div class="category-grid" id="category-grid">
                     <article class="category-card">
                         <h3>Food</h3>
                         <p>KSh 6,500</p>
@@ -99,7 +102,7 @@
                                 <th>Amount</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="transaction-list">
                             <tr>
                                 <td>Groceries</td>
                                 <td>Food</td>
@@ -125,9 +128,43 @@
                 </div>
             </section>
 
-            <section class="reports-section" id="reports">
-                <h2>Budget Tip</h2>
-                <p>Track your expenses regularly to help you stay within your monthly budget.</p>
+            <section class="reports-section" id="add-expense">
+                <h2>Add a New Expense</h2>
+                <form id="expense-form">
+                    <label for="expense-name">Expense name</label>
+                    <input
+                        type="text"
+                        id="expense-name"
+                        placeholder="e.g. Groceries"
+                        required
+                    >
+
+                    <label for="expense-category">Category</label>
+                    <select id="expense-category" required>
+                        <option value="">Choose a category</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Rent">Rent</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Utilities">Utilities</option>
+                    </select>
+
+                    <label for="expense-amount">Amount (KSh)</label>
+                    <input
+                        type="number"
+                        id="expense-amount"
+                        min="0.01"
+                        step="0.01"
+                        placeholder="e.g. 500"
+                        required
+                    >
+
+                    <button type="submit">Add Expense</button>
+                </form>
+                <p id="budget-message" role="status" aria-live="polite">
+                    Track your expenses to stay within your budget.
+                </p>
             </section>
 
             <footer>
@@ -135,14 +172,5 @@
             </footer>
         </main>
     </div>
- <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
